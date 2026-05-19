@@ -34,13 +34,13 @@
 > Add your project screenshots inside the `assets/` folder and update the paths below.
 
 ### 🏠 Home Page
-![Home Page](assets/home.png)
+![Home Page](assests/home.png)
 
 ### 🔍 Search Results
-![Search Page](assets/suggest.png)
+![Search Page](assests/suggest.png)
 
 ### 📖 Article View
-![Article View](assets/result.png)
+![Article View](assests/result.png)
 
 ---
 
