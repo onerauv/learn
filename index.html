@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MisnDoow</title>
+  <link rel="icon" href="assests/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+
+    <!-- FIXED: logo no longer clickable -->
+    <div class="logo">
+      <img src="assests/logo.png" alt="Home Icon" />
+    </div>
+
+    <div class="group">
+      <a href="index.html">
+        <img src="assests/new.png" alt="New Chat" />
+      </a>
+    </div>
+
+    <a id="downloadIcon">
+      <img src="assests/qr.png" alt="Download" />
+
+      <div id="downloadTooltip">
+        <img src="assests/download.png" alt="QR Code" />
+        <div>Scan Misndoow</div>
+      </div>
+    </a>
+
+    <a id="iconss" href="help.html">
+      <img src="assests/help.png" alt="Login" />
+    </a>
+  </div>
+
+  <div class="task-area">
+    <div class="search-box">
+      <textarea placeholder="Search Word, Article.." id="searchInput" autofocus rows="1"></textarea>
+
+      <img
+        src="assests/send.png"
+        alt="Send"
+        title="Send"
+        id="submitBtn"
+      />
+    </div>
+
+    <div class="autocomplete-suggestions" id="suggestions" style="display:none;"></div>
+
+    <div id="result" class="result" style="display:none;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

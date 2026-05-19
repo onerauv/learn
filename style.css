@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #ccc;
+}
+
+.sidebar {
+  width: 70px;
+  background-color: #252526;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sidebar a {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.sidebar .group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.sidebar a img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0.8) invert(0.8);
+  transition: filter 0.3s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+.sidebar a:hover img {
+  filter: brightness(0.5) invert(0.7) sepia(1) saturate(5) hue-rotate(210deg);
+}
+
+/* FIXED: removed clickable link from website logo */
+.sidebar .logo img {
+  filter: none !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.sidebar .logo:hover img {
+  filter: none !important;
+}
+
+#downloadIcon {
+  position: absolute;
+  bottom: 60px;
+  left: 22.5px;
+}
+
+#iconss {
+  position: absolute;
+  bottom: 15px;
+  left: 22.5px;
+}
+
+.task-area {
+  flex-grow: 1;
+  background-color: #1e1e1e;
+  padding: 20px;
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+.search-box {
+  background-color: #252526;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.search-box textarea {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ccc;
+  font-size: 16px;
+  resize: none;
+  height: 40px;
+  font-family: inherit;
+  padding: 6px;
+}
+
+.search-box img#submitBtn {
+  cursor: pointer;
+  margin-left: 12px;
+  width: 25px;
+  height: 25px;
+  user-select: none;
+  filter: none !important;
+  transition: none;
+}
+
+.search-box textarea::placeholder {
+  color: #888;
+}
+
+.result {
+  margin-top: 80px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #252526;
+  padding: 15px;
+  border-radius: 12px;
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.4;
+  user-select: text;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 15px;
+  min-height: 100px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+.result h2 {
+  margin-top: 0;
+  color: royalblue;
+}
+
+.result-text {
+  flex: 1;
+}
+
+.result img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.autocomplete-suggestions {
+  position: absolute;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2a2a2a;
+  color: #ccc;
+  border: 1px solid #444;
+  border-radius: 8px;
+  max-width: 630px;
+  width: 100%;
+  box-shadow: none;
+  z-index: 5;
+  font-size: 14px;
+  overflow-y: auto;
+  max-height: 160px;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.autocomplete-suggestions::-webkit-scrollbar {
+  display: none;
+}
+
+.autocomplete-suggestions div {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.autocomplete-suggestions div:hover {
+  background-color: #3a3a3a;
+}
+
+#downloadTooltip {
+  position: absolute;
+  bottom: 42px;
+  left: -17px;
+  width: 150px;
+  height: 170px;
+  background-color: #000;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ccc;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 1.3;
+  text-align: center;
+  padding: 12px 12px 14px 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  user-select: none;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  word-break: break-word;
+}
+
+#downloadTooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 14px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 14px solid #000;
+}
+
+#downloadTooltip.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#downloadTooltip img {
+  width: 120px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  user-select: none;
+  filter: none !important;
+  transition: none !important;
+  pointer-events: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+#downloadTooltip img:hover {
+  filter: none !important;
+  cursor: default;
+}
+
+@media (max-width: 700px) {
+  .search-box,
+  .autocomplete-suggestions {
+    width: 80%;
+    max-width: 80%;
+  }
+
+  .result {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 100px;
+    padding: 10px;
+  }
+
+  .result img {
+    align-self: center;
+  }
+}
