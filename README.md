@@ -1,11 +1,5 @@
 # 🧠 MisnDoow
 
-> Explore knowledge instantly with **MisnDoow** — a sleek, dark-themed Wikipedia browser.
-
----
-
-## 🌐 Overview
-
 **MisnDoow** is a lightweight web application that allows users to quickly search and explore Wikipedia content in a modern, dark-themed interface. It focuses on simplicity, speed, and a distraction-free reading experience.
 
 ---
@@ -30,8 +24,6 @@
 ---
 
 ## 📸 Screenshots
-
-> Add your project screenshots inside the `assets/` folder and update the paths below.
 
 ### 🏠 Home Page
 ![Home Page](assests/home.png)
